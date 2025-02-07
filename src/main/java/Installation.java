@@ -13,32 +13,19 @@ public class Installation {
         List<File> dirs = new ArrayList<>();
         List<File> files = new ArrayList<>();
 
-        File src = new File(GAMES + "/src");
-        File main = new File(GAMES + "/src/main");
-        File test = new File(GAMES + "/src/test");
-        File res = new File(GAMES + "/res");
-        File drawables = new File(GAMES + "/res/drawables");
-        File vectors = new File(GAMES + "/res/vectors");
-        File ions = new File(GAMES + "/res/icons");
-        File savegames = new File(GAMES + "/savegames");
-        File temp = new File(GAMES + "/temp");
+        dirs.add(new File(GAMES + "/src"));
+        dirs.add(new File(GAMES + "/src/main"));
+        dirs.add(new File(GAMES + "/src/test"));
+        dirs.add(new File(GAMES + "/res"));
+        dirs.add(new File(GAMES + "/res/drawables"));
+        dirs.add(new File(GAMES + "/res/vectors"));
+        dirs.add(new File(GAMES + "/res/icons"));
+        dirs.add(new File(GAMES + "/savegames"));
+        dirs.add(new File(GAMES + "/temp"));
 
-        File mainFile = new File(main, "Main.java");
-        File utilsFile = new File(main, "Utils.java");
-        tempFile = new File(temp, "temp.txt");
-
-        dirs.add(src);
-        dirs.add(main);
-        dirs.add(test);
-        dirs.add(res);
-        dirs.add(drawables);
-        dirs.add(vectors);
-        dirs.add(ions);
-        dirs.add(savegames);
-        dirs.add(temp);
-
-        files.add(mainFile);
-        files.add(utilsFile);
+        files.add(new File(GAMES + "/src/main", "Main.java"));
+        files.add(new File(GAMES + "/src/main", "Utils.java"));
+        tempFile = new File(GAMES + "/temp", "temp.txt");
         files.add(tempFile);
 
         add.addDirs(dirs);

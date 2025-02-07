@@ -1,17 +1,13 @@
-import com.sun.tools.javac.Main;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class Logs {
 
     public void writeLog(File tempFile) {
         try (FileWriter writer = new FileWriter(tempFile)) {
-            writer.append(String.valueOf(Add.builder));
+            writer.write(Add.builder.toString());
             writer.flush();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            Add.builder.append(e.getMessage()).append('\n');
         }
     }
 }
